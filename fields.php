@@ -18,6 +18,7 @@
 		new Field('facebook', 'Facebook', false),
 		new Field('instagram', 'Instagram', false),
 		new Field('twitter', 'Twitter', false),
+        new Field('phone', 'Phone number', false),
 		new Field('seats', 'Seats available', false),
 		new Field('bio', 'Instructor bio', false),
 		new Field('paypal', 'Paypal email', false),
