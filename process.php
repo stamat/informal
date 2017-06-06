@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-  include 'fields.php';
+  	include 'fields.php';
 	$table_name = 'informal';
 
 	function createTableSQL($name, $structure) {
@@ -17,12 +17,12 @@
 		return $pre . implode(', ', $fields) . $end;
 	}
 
-	function generateRequiredMap($data_structure) {
+	function generateMap($data_structure, $field, $val = true) {
 		$required = array();
 
 		$len = count($data_structure);
 		for ($i = 0; $i < $len; $i++) {
-			if($data_structure[$i]->required) {
+			if($data_structure[$i]->$field === $val) {
 				array_push($required, $data_structure[$i]);
 			}
 		}
@@ -30,7 +30,18 @@
 		return $required;
 	}
 
-	$required = generateRequiredMap($data_structure);
+	$required = generateMap($data_structure, 'required');
+	$image_fields = generateMap($data_structure, 'type', 'image');
+
+	function moveImages($post, $image_fields) {
+		$ds = DIRECTORY_SEPARATOR;
+		$len = count($image_fields);
+		for ($i = 0; $i < $len; $i++) {
+			if(isset($post[$image_fields[$i]->name]) && trim($post[$image_fields[$i]->name]) !== "") {
+				rename(dirname( __FILE__ ) . $ds."uploads". $ds. $post[$image_fields[$i]->name], dirname( __FILE__ ). $ds."images". $ds.$post[$image_fields[$i]->name]);
+			}
+		}
+	}
 
 	//TODO: there is no email, except the paypal emai....
 	//TODO: there is no name field for the educator as well
@@ -80,6 +91,8 @@
 	} catch (PDOException $e) {
 		echo '{"error":"'.$e->getMessage().'"}';
 	}
+
+	moveImages($_POST, $image_fields);
 
 
 	function buildInsertSQL($table_name, $post, $data_structure) {

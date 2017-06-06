@@ -21,6 +21,8 @@
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
@@ -34,8 +36,8 @@
 		<textarea id="class_description" name="class_description"></textarea><br />
 		</div>
 		<div class="field">
-		<label for="country">Country: </label>
-		<select id="country">
+		<label for="class_location">Country: </label>
+		<select id="class_location" name="class_location">
 			<option value="">-</option>
 			<option value="AF">Afghanistan</option>
 			<option value="AX">Åland Islands</option>
@@ -294,6 +296,18 @@
 		<div class="out err"></div>
 		<div class="out suc">Sign up is successful</div>
 		<div class="submitbtn"><a href="#">Submit</a></div>
+	</form>
+	<form action="upload.php" class="dropzone-hero dropzone">
+		<div class="dz-message needsclick">
+		    Drop files here or click to upload.<br>
+		    <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+		 </div>
+	</form>
+	<form action="upload.php" class="dropzone-additional dropzone">
+		<div class="dz-message needsclick">
+		    Drop files here or click to upload.<br>
+		    <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+		</div>
 	</form>
 </body>
 </html>

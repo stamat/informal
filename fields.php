@@ -21,10 +21,10 @@
 		new Field('seats', 'Seats available', false),
 		new Field('bio', 'Instructor bio', false),
 		new Field('paypal', 'Paypal email', false),
-		new Field('hero_image', 'Hero Image', false),
-		new Field('image1', 'Image 1', false),
-		new Field('image2', 'Image 2', false),
-		new Field('image3', 'Image 3', false),
-		new Field('image4', 'Image 4', false),
-		new Field('image5', 'Image 5', false)
+		new Field('hero_image', 'Hero Image', false, 'image'),
+		new Field('image1', 'Image 1', false, 'image'),
+		new Field('image2', 'Image 2', false, 'image'),
+		new Field('image3', 'Image 3', false, 'image'),
+		new Field('image4', 'Image 4', false, 'image'),
+		new Field('image5', 'Image 5', false, 'image')
 	);
