@@ -26,288 +26,225 @@
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-	<form id="signup">
-		<div class="field">
-		<label for="class_name">Class Name: </label>
-		<input type="text" name="class_name" id="class_name" /><br />
-		</div>
-		<div class="field">
-		<label for="class_description">Class Description: </label>
-		<textarea id="class_description" name="class_description"></textarea><br />
-		</div>
-		<div class="field">
-		<label for="class_location">Country: </label>
-		<select id="class_location" name="class_location">
-			<option value="">-</option>
-			<option value="AF">Afghanistan</option>
-			<option value="AX">Åland Islands</option>
-			<option value="AL">Albania</option>
-			<option value="DZ">Algeria</option>
-			<option value="AS">American Samoa</option>
-			<option value="AD">Andorra</option>
-			<option value="AO">Angola</option>
-			<option value="AI">Anguilla</option>
-			<option value="AQ">Antarctica</option>
-			<option value="AG">Antigua and Barbuda</option>
-			<option value="AR">Argentina</option>
-			<option value="AM">Armenia</option>
-			<option value="AW">Aruba</option>
-			<option value="AU">Australia</option>
-			<option value="AT">Austria</option>
-			<option value="AZ">Azerbaijan</option>
-			<option value="BS">Bahamas</option>
-			<option value="BH">Bahrain</option>
-			<option value="BD">Bangladesh</option>
-			<option value="BB">Barbados</option>
-			<option value="BY">Belarus</option>
-			<option value="BE">Belgium</option>
-			<option value="BZ">Belize</option>
-			<option value="BJ">Benin</option>
-			<option value="BM">Bermuda</option>
-			<option value="BT">Bhutan</option>
-			<option value="BO">Bolivia</option>
-			<option value="BQ">Bonaire</option>
-			<option value="BA">Bosnia and Herzegovina</option>
-			<option value="BW">Botswana</option>
-			<option value="BV">Bouvet Island</option>
-			<option value="BR">Brazil</option>
-			<option value="IO">British Indian Ocean Territory</option>
-			<option value="BN">Brunei Darussalam</option>
-			<option value="BG">Bulgaria</option>
-			<option value="BF">Burkina Faso</option>
-			<option value="BI">Burundi</option>
-			<option value="KH">Cambodia</option>
-			<option value="CM">Cameroon</option>
-			<option value="CA">Canada</option>
-			<option value="CV">Cape Verde</option>
-			<option value="KY">Cayman Islands</option>
-			<option value="CF">Central African Republic</option>
-			<option value="TD">Chad</option>
-			<option value="CL">Chile</option>
-			<option value="CN">China</option>
-			<option value="CX">Christmas Island</option>
-			<option value="CC">Cocos </option>
-			<option value="CO">Colombia</option>
-			<option value="KM">Comoros</option>
-			<option value="CG">Congo</option>
-			<option value="CD">Congo</option>
-			<option value="CK">Cook Islands</option>
-			<option value="CR">Costa Rica</option>
-			<option value="CI">Côte d'Ivoire</option>
-			<option value="HR">Croatia</option>
-			<option value="CU">Cuba</option>
-			<option value="CW">Curaçao</option>
-			<option value="CY">Cyprus</option>
-			<option value="CZ">Czech Republic</option>
-			<option value="DK">Denmark</option>
-			<option value="DJ">Djibouti</option>
-			<option value="DM">Dominica</option>
-			<option value="DO">Dominican Republic</option>
-			<option value="EC">Ecuador</option>
-			<option value="EG">Egypt</option>
-			<option value="SV">El Salvador</option>
-			<option value="GQ">Equatorial Guinea</option>
-			<option value="ER">Eritrea</option>
-			<option value="EE">Estonia</option>
-			<option value="ET">Ethiopia</option>
-			<option value="FK">Falkland Islands </option>
-			<option value="FO">Faroe Islands</option>
-			<option value="FJ">Fiji</option>
-			<option value="FI">Finland</option>
-			<option value="FR">France</option>
-			<option value="GF">French Guiana</option>
-			<option value="PF">French Polynesia</option>
-			<option value="TF">French Southern Territories</option>
-			<option value="GA">Gabon</option>
-			<option value="GM">Gambia</option>
-			<option value="GE">Georgia</option>
-			<option value="DE">Germany</option>
-			<option value="GH">Ghana</option>
-			<option value="GI">Gibraltar</option>
-			<option value="GR">Greece</option>
-			<option value="GL">Greenland</option>
-			<option value="GD">Grenada</option>
-			<option value="GP">Guadeloupe</option>
-			<option value="GU">Guam</option>
-			<option value="GT">Guatemala</option>
-			<option value="GG">Guernsey</option>
-			<option value="GN">Guinea</option>
-			<option value="GW">Guinea-Bissau</option>
-			<option value="GY">Guyana</option>
-			<option value="HT">Haiti</option>
-			<option value="HM">Heard Island and McDonald Islands</option>
-			<option value="VA">Holy See </option>
-			<option value="HN">Honduras</option>
-			<option value="HK">Hong Kong</option>
-			<option value="HU">Hungary</option>
-			<option value="IS">Iceland</option>
-			<option value="IN">India</option>
-			<option value="ID">Indonesia</option>
-			<option value="IR">Iran</option>
-			<option value="IQ">Iraq</option>
-			<option value="IE">Ireland</option>
-			<option value="IM">Isle of Man</option>
-			<option value="IL">Israel</option>
-			<option value="IT">Italy</option>
-			<option value="JM">Jamaica</option>
-			<option value="JP">Japan</option>
-			<option value="JE">Jersey</option>
-			<option value="JO">Jordan</option>
-			<option value="KZ">Kazakhstan</option>
-			<option value="KE">Kenya</option>
-			<option value="KI">Kiribati</option>
-			<option value="KP">Korea</option>
-			<option value="KR">Korea</option>
-			<option value="KW">Kuwait</option>
-			<option value="KG">Kyrgyzstan</option>
-			<option value="LA">Lao People's Democratic Republic</option>
-			<option value="LV">Latvia</option>
-			<option value="LB">Lebanon</option>
-			<option value="LS">Lesotho</option>
-			<option value="LR">Liberia</option>
-			<option value="LY">Libya</option>
-			<option value="LI">Liechtenstein</option>
-			<option value="LT">Lithuania</option>
-			<option value="LU">Luxembourg</option>
-			<option value="MO">Macao</option>
-			<option value="MK">Macedonia, FYRO</option>
-			<option value="MG">Madagascar</option>
-			<option value="MW">Malawi</option>
-			<option value="MY">Malaysia</option>
-			<option value="MV">Maldives</option>
-			<option value="ML">Mali</option>
-			<option value="MT">Malta</option>
-			<option value="MH">Marshall Islands</option>
-			<option value="MQ">Martinique</option>
-			<option value="MR">Mauritania</option>
-			<option value="MU">Mauritius</option>
-			<option value="YT">Mayotte</option>
-			<option value="MX">Mexico</option>
-			<option value="FM">Micronesia</option>
-			<option value="MD">Moldova</option>
-			<option value="MC">Monaco</option>
-			<option value="MN">Mongolia</option>
-			<option value="ME">Montenegro</option>
-			<option value="MS">Montserrat</option>
-			<option value="MA">Morocco</option>
-			<option value="MZ">Mozambique</option>
-			<option value="MM">Myanmar</option>
-			<option value="NA">Namibia</option>
-			<option value="NR">Nauru</option>
-			<option value="NP">Nepal</option>
-			<option value="NL">Netherlands</option>
-			<option value="NC">New Caledonia</option>
-			<option value="NZ">New Zealand</option>
-			<option value="NI">Nicaragua</option>
-			<option value="NE">Niger</option>
-			<option value="NG">Nigeria</option>
-			<option value="NU">Niue</option>
-			<option value="NF">Norfolk Island</option>
-			<option value="MP">Northern Mariana Islands</option>
-			<option value="NO">Norway</option>
-			<option value="OM">Oman</option>
-			<option value="PK">Pakistan</option>
-			<option value="PW">Palau</option>
-			<option value="PS">Palestine</option>
-			<option value="PA">Panama</option>
-			<option value="PG">Papua New Guinea</option>
-			<option value="PY">Paraguay</option>
-			<option value="PE">Peru</option>
-			<option value="PH">Philippines</option>
-			<option value="PN">Pitcairn</option>
-			<option value="PL">Poland</option>
-			<option value="PT">Portugal</option>
-			<option value="PR">Puerto Rico</option>
-			<option value="QA">Qatar</option>
-			<option value="RE">Réunion</option>
-			<option value="RO">Romania</option>
-			<option value="RU">Russian Federation</option>
-			<option value="RW">Rwanda</option>
-			<option value="BL">Saint Barthélemy</option>
-			<option value="SH">Saint Helena</option>
-			<option value="KN">Saint Kitts and Nevis</option>
-			<option value="LC">Saint Lucia</option>
-			<option value="MF">Saint Martin </option>
-			<option value="PM">Saint Pierre and Miquelon</option>
-			<option value="VC">Saint Vincent and the Grenadines</option>
-			<option value="WS">Samoa</option>
-			<option value="SM">San Marino</option>
-			<option value="ST">Sao Tome and Principe</option>
-			<option value="SA">Saudi Arabia</option>
-			<option value="SN">Senegal</option>
-			<option value="RS">Serbia</option>
-			<option value="SC">Seychelles</option>
-			<option value="SL">Sierra Leone</option>
-			<option value="SG">Singapore</option>
-			<option value="SX">Sint Maarten </option>
-			<option value="SK">Slovakia</option>
-			<option value="SI">Slovenia</option>
-			<option value="SB">Solomon Islands</option>
-			<option value="SO">Somalia</option>
-			<option value="ZA">South Africa</option>
-			<option value="GS">South Georgia and the South Sandwich Islands</option>
-			<option value="SS">South Sudan</option>
-			<option value="ES">Spain</option>
-			<option value="LK">Sri Lanka</option>
-			<option value="SD">Sudan</option>
-			<option value="SR">Suriname</option>
-			<option value="SJ">Svalbard and Jan Mayen</option>
-			<option value="SZ">Swaziland</option>
-			<option value="SE">Sweden</option>
-			<option value="CH">Switzerland</option>
-			<option value="SY">Syrian Arab Republic</option>
-			<option value="TW">Taiwan</option>
-			<option value="TJ">Tajikistan</option>
-			<option value="TZ">Tanzania</option>
-			<option value="TH">Thailand</option>
-			<option value="TL">Timor-Leste</option>
-			<option value="TG">Togo</option>
-			<option value="TK">Tokelau</option>
-			<option value="TO">Tonga</option>
-			<option value="TT">Trinidad and Tobago</option>
-			<option value="TN">Tunisia</option>
-			<option value="TR">Turkey</option>
-			<option value="TM">Turkmenistan</option>
-			<option value="TC">Turks and Caicos Islands</option>
-			<option value="TV">Tuvalu</option>
-			<option value="UG">Uganda</option>
-			<option value="UA">Ukraine</option>
-			<option value="AE">United Arab Emirates</option>
-			<option value="GB">United Kingdom</option>
-			<option value="US">United States</option>
-			<option value="UM">United States Minor Outlying Islands</option>
-			<option value="UY">Uruguay</option>
-			<option value="UZ">Uzbekistan</option>
-			<option value="VU">Vanuatu</option>
-			<option value="VE">Venezuela</option>
-			<option value="VN">Viet Nam</option>
-			<option value="VG">Virgin Islands</option>
-			<option value="VI">Virgin Islands</option>
-			<option value="WF">Wallis and Futuna</option>
-			<option value="EH">Western Sahara</option>
-			<option value="YE">Yemen</option>
-			<option value="ZM">Zambia</option>
-			<option value="ZW">Zimbabwe</option>
-		</select></div>
-		<div class="field resume">
-		<label for="resume">Resume: </label>
-		<textarea id="resume"></textarea>
+	<div class="content clearfix">
+		<form id="signup">
+			<div class="wrapper">
+				<div class="field">
+					<div class="out err"></div>
+					<label for="class_name">*Class Name </label>
+					<input type="text" name="class_name" id="class_name" placeholder="Enter Name" />
+				</div>
+				<div class="field">
+					<div class="out err"></div>
+					<label for="class_description">*Class Description </label>
+					<textarea id="class_description" name="class_description" placeholder="Enter Description"></textarea>
+				</div>
+				<div class="field">
+					<label for="class_type">Class type </label>
+					<select name="class_type" id="class_type">
+					  <option value="" selected="selected">Select Class Type</option>
+					  <option value="coloring">Coloring</option>
+					  <option value="haircutting">Haircutting</option>
+					  <option value="styling">Styling</option>
+					  <option value="business">Business</option>
+				  	</select>
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="demo">Demo or Hands-on </label>
+					<input type="text" name="demo" id="demo" placeholder="Enter Url" />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="class_location">Class location</label>
+					<input type="text" name="class_location" id="class_location" placeholder="Enter Location"  />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="address">Address </label>
+					<input type="text" name="address1" id="address1" placeholder="Enter Address" /> <br />
+					<input type="text" name="address2" id="address2" placeholder="Enter Address 2" />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="city">City</label>
+					<input type="text" name="city" id="city" placeholder="Enter City" />
+					<div class="out err"></div>
+				</div>
+				<div class="dual-field clearfix">
+					<div class="field">
+						<div class="wrap">
+							<label for="state">State</label>
+							<select name="state" id="state">
+							  <option value="" selected="selected">Select State</option>
+							  <option value="AL">Alabama</option>
+							  <option value="AK">Alaska</option>
+							  <option value="AZ">Arizona</option>
+							  <option value="AR">Arkansas</option>
+							  <option value="CA">California</option>
+							  <option value="CO">Colorado</option>
+							  <option value="CT">Connecticut</option>
+							  <option value="DE">Delaware</option>
+							  <option value="DC">District Of Columbia</option>
+							  <option value="FL">Florida</option>
+							  <option value="GA">Georgia</option>
+							  <option value="HI">Hawaii</option>
+							  <option value="ID">Idaho</option>
+							  <option value="IL">Illinois</option>
+							  <option value="IN">Indiana</option>
+							  <option value="IA">Iowa</option>
+							  <option value="KS">Kansas</option>
+							  <option value="KY">Kentucky</option>
+							  <option value="LA">Louisiana</option>
+							  <option value="ME">Maine</option>
+							  <option value="MD">Maryland</option>
+							  <option value="MA">Massachusetts</option>
+							  <option value="MI">Michigan</option>
+							  <option value="MN">Minnesota</option>
+							  <option value="MS">Mississippi</option>
+							  <option value="MO">Missouri</option>
+							  <option value="MT">Montana</option>
+							  <option value="NE">Nebraska</option>
+							  <option value="NV">Nevada</option>
+							  <option value="NH">New Hampshire</option>
+							  <option value="NJ">New Jersey</option>
+							  <option value="NM">New Mexico</option>
+							  <option value="NY">New York</option>
+							  <option value="NC">North Carolina</option>
+							  <option value="ND">North Dakota</option>
+							  <option value="OH">Ohio</option>
+							  <option value="OK">Oklahoma</option>
+							  <option value="OR">Oregon</option>
+							  <option value="PA">Pennsylvania</option>
+							  <option value="RI">Rhode Island</option>
+							  <option value="SC">South Carolina</option>
+							  <option value="SD">South Dakota</option>
+							  <option value="TN">Tennessee</option>
+							  <option value="TX">Texas</option>
+							  <option value="UT">Utah</option>
+							  <option value="VT">Vermont</option>
+							  <option value="VA">Virginia</option>
+							  <option value="WA">Washington</option>
+							  <option value="WV">West Virginia</option>
+							  <option value="WI">Wisconsin</option>
+							  <option value="WY">Wyoming</option>
+							</select>
+							<div class="out err"></div>
+						</div>
 					</div>
-		<div class="out err"></div>
-		<div class="out suc">Sign up is successful</div>
-		<div class="submitbtn"><a href="#">Submit</a></div>
-	</form>
-	<form action="upload.php" class="dropzone-hero dropzone">
-		<div class="dz-message needsclick">
-		    Drop files here or click to upload.<br>
-		    <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
-		 </div>
-	</form>
-	<form action="upload.php" class="dropzone-additional dropzone">
-		<div class="dz-message needsclick">
-		    Drop files here or click to upload.<br>
-		    <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+					<div class="field">
+						<div class="wrap">
+							<label for="zip">Zip </label>
+							<input type="text" name="zip" id="zip" placeholder="Enter Zip" />
+							<div class="out err"></div>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label for="price">Price </label>
+					<input type="text" name="price" id="price" placeholder="Enter Price" />
+					<div class="out err"></div>
+				</div>
+				<div class="dual-field clearfix">
+					<div class="field">
+						<div class="wrap">
+							<label for="start_time">Hours of Class </label>
+							<input type="text" name="start_time" id="start_time" placeholder="Start time" />
+							<div class="out err"></div>
+						</div>
+					</div>
+					<div class="field">
+						<div class="wrap">
+							<label for="end_time" class="placeholder">hidden</label>
+							<input type="text" name="end_time" id="end_time" placeholder="End time" />
+							<div class="out err"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="field">
+					<label for="facebook">Facebook </label>
+					<input type="text" name="facebook" id="facebook" placeholder="Enter Url" />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="twitter">Twitter </label>
+					<input type="text" name="twitter" id="twitter" placeholder="Enter Url" />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="instagram">Instagram </label>
+					<input type="text" name="instagram" id="instagram" placeholder="Enter Url" />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="phone">Phone Number </label>
+					<input type="text" name="phone" id="phone" placeholder="(000) 000-0000" />
+					<div class="out err"></div>
+				</div>
+				<div class="field">
+					<label for="seats">Seats available </label>
+					<input type="text" name="seats" id="seats" placeholder="Enter Url" />
+					<div class="out err"></div>
+				</div>
+
+				<div class="field">
+					<label for="bio">Instructor Bio</label>
+					<textarea id="bio" name="bio" placeholder="Enter Description"></textarea>
+					<div class="out err"></div>
+				</div>
+
+				<div class="field">
+					<label for="paypal">PAYPAL EMAIL ADDRESS</label>
+					<input type="text" name="paypal" id="paypal" placeholder="Enter email" />
+					<div class="out err"></div>
+				</div>
+				<div class="notice">
+					We choose to use PayPal to keep things simple for you and for our team to manage,  If you already have an account, enter your email address below, if not, <a href="https://registration.paypal.com/">register here</a> and enter the email address below when you’re done.
+				</div>
+				<div class="out gen-err err"></div>
+				<div class="out suc">Sign up is successful</div>
+				<div class="submitbtn"><a href="#">Submit</a></div>
+			</div>
+		</form>
+		<div class="uploads">
+			<div class="wrapper">
+				<label>Upload product hero shot</label>
+				<form action="upload.php" class="dropzone-hero dropzone">
+					<div class="dz-message needsclick">
+						<div class="first">Drag an image here</div>
+						<div class="or">– or –</div>
+						<div class="button">
+							<span class="btn">choose image to upload</span>
+						</div>
+						<div class="second">
+							For best results crop and upload 700 x 640 px
+This image should be representative of your work
+and NOT include any additional text.  We reserve the
+right to replace this photo if it doesn’t meet the above
+mentioned criteria.
+						</div>
+					 </div>
+				</form>
+				<label>Additional Photos / Technique Shots / Flyer</label>
+				<form action="upload.php" class="dropzone-additional dropzone">
+					<div class="dz-message needsclick">
+						<div class="first">Drag an image here</div>
+						<div class="or">– or –</div>
+						<div class="button">
+							<span class="btn">choose image to upload</span>
+						</div>
+						<div class="second">
+							For best results crop and upload 700 x 640 px
+This image should be representative of your work
+and NOT include any additional text.  We reserve the
+right to replace this photo if it doesn’t meet the above
+mentioned criteria.
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
-	</form>
+	</div>
 </body>
 </html>

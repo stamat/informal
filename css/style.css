@@ -1,3 +1,219 @@
 body {
 	font-family: 'Karla', sans-serif;
+	box-sizing: border-box;
+	color: #3B3B3B;
+	font-size: 12px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	font-family: 'Karla', sans-serif;
+    color:    #A9A9A9;
+	font-size: 15px;
+	letter-spacing: 0px;
+	line-height: 24px;
+	text-shadow: none;
+	font-weight: normal;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font-family: 'Karla', sans-serif;
+   color:    #A9A9A9;
+   opacity:  1;
+   font-size: 15px;
+   letter-spacing: 0px;
+   line-height: 24px;
+   text-shadow: none;
+   font-weight: normal;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	font-family: 'Karla', sans-serif;
+   color:    #A9A9A9;
+   opacity:  1;
+   font-size: 15px;
+   letter-spacing: 0px;
+   line-height: 24px;
+   text-shadow: none;
+   font-weight: normal;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font-family: 'Karla', sans-serif;
+   color:    #A9A9A9;
+   font-size: 15px;
+   letter-spacing: 0px;
+   line-height: 24px;
+   text-shadow: none;
+   font-weight: normal;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+	font-family: 'Karla', sans-serif;
+   color:    #A9A9A9;
+   font-size: 15px;
+   letter-spacing: 0px;
+   line-height: 24px;
+   text-shadow: none;
+   font-weight: normal;
+}
+
+#signup {
+	float: left;
+	width: 40%;
+}
+
+#signup .wrapper {
+	padding-right: 80px;
+}
+
+.content {
+	padding: 0 10px;
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+.uploads {
+	float: left;
+	width: 60%;
+}
+
+label {
+	display: block;
+	text-transform: uppercase;
+	color: #6E6E6E;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding-bottom: 7px;
+}
+
+.select2-selection {
+	border: 1px solid #A9A9A9 !important;
+	border-radius: 0px !important;
+	height: 47px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+	background: url(Shape@2x.png);
+	background-color: transparent !important;
+	background-repeat: no-repeat;
+	background-size: 10.8px 6.8px;
+	border-color: transparent !important;
+	border-style: none !important;
+	border-width: 0px !important;
+	background-position: center;
+	width: 10px !important;
+	height: 10px !important;
+	position: absolute !important;
+	top: 50% !important;
+	margin-top: -5px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 100% !important;
+	top: 0px !important;
+	width: 40px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: 45px !important;
+	color:    #A9A9A9 !important;
+	font-size: 15px !important;
+	letter-spacing: 0px;
+	text-shadow: none;
+	font-weight: normal;
+}
+
+a {
+	color: #4970FF;
+}
+
+.placeholder {
+	visibility: hidden;
+}
+
+.err {
+	color: red;
+}
+
+.suc {
+	color: green;
+	display: none;
+}
+
+.select2 {
+	margin-bottom: 17px !important;
+}
+
+input, textarea, select {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #A9A9A9;
+	outline: none;
+	font-size: 15px;
+	letter-spacing: 0px;
+	line-height: 24px;
+	padding-top: 11px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: black;
+	margin-bottom: 17px;
+}
+
+textarea {
+	min-height: 140px;
+}
+
+.dual-field .field {
+	float: left;
+	width: 50%;
+}
+
+.dual-field .field .wrap {
+	padding-right: 20px;
+}
+
+.dropzone {
+	border: 1px dashed #A9A9A9;
+}
+
+.submitbtn {
+	color: white;
+	background: #4970FF;
+	text-align: center;
+}
+
+.notice {
+	margin-bottom: 20px;
+}
+
+.submitbtn a {
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-weight: bold;
+		line-height: 64px;
+}
+
+
+.dropzone .button span {
+		color: white;
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		background: black;
+		font-weight: bold;
+		line-height: 35px;
+		padding-left: 45px;
+		padding-right: 45px;
+		margin-top: 4px;
+		margin-bottom: 13px;
+}
+
+.dz-message {
+	max-width: 370px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.dropzone {
+	margin-bottom: 40px;
 }
