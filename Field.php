@@ -12,7 +12,7 @@
 		public $sql;
 
 		public function buildSQL() {
-			$sql = $this->name. '   '. $this->datatype.'('.$this->length.')   ';
+			$sql = '`'.$this->name. '`   '. $this->datatype.'('.$this->length.')   ';
 
 			if ($this->default !== null) {
 				$sql . 'NOT NULL';

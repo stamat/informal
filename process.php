@@ -2,18 +2,19 @@
 	session_start();
 
   include 'fields.php';
+	$table_name = 'informal';
 
 	function createTableSQL($name, $structure) {
-		$pre = 'CREATE TABLE'.$name. ' ( ID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,';
+		$pre = 'CREATE TABLE IF NOT EXISTS '.$name. ' ( id MEDIUMINT NOT NULL AUTO_INCREMENT, ';
 		$fields = array();
-		$end = ');';
+		$end = ', PRIMARY KEY (id));';
 
 		$len = count($structure);
 		for ($i = 0; $i < $len; $i++) {
-			array_push($fields, $structure[i]->sql);
+			array_push($fields, $structure[$i]->sql);
 		}
 
-		return $pre . implode(',', $fields) . $end;
+		return $pre . implode(', ', $fields) . $end;
 	}
 
 	function generateRequiredMap($data_structure) {
@@ -73,8 +74,16 @@
 	// STATEMENT EMULATION OFF
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-	function buildInsertSQL($post, $data_structure) {
-		$pre = 'INSERT INTO applications(';
+	try {
+		$tablesql = createTableSQL($table_name, $data_structure);
+		$db->exec( $tablesql );
+	} catch (PDOException $e) {
+		echo '{"error":"'.$e->getMessage().'"}';
+	}
+
+
+	function buildInsertSQL($table_name, $post, $data_structure) {
+		$pre = 'INSERT INTO '.$table_name.'(';
 		$mid = ') VALUES (';
 		$end = ')';
 		$cols = array();
@@ -95,7 +104,7 @@
 		return array('sql' => $sql, 'values' => $vals);
 	}
 
-		$s = buildInsertSQL($_POST, $data_structure);
+		$s = buildInsertSQL($table_name, $_POST, $data_structure);
 
 		$stmt = $db->prepare( $s['sql'] );
 		$stmt->execute( $s['values'] );

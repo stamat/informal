@@ -26,16 +26,12 @@
 <body>
 	<form id="signup">
 		<div class="field">
-		<label for="name">Full name: </label>
-		<input type="text" name="name" id="name" /><br />
+		<label for="class_name">Class Name: </label>
+		<input type="text" name="class_name" id="class_name" /><br />
 		</div>
 		<div class="field">
-		<label for="email">E-mail: </label>
-		<input type="text" name="email" id="email" /><br />
-		</div>
-		<div class="field participate">
-			<label for="participate">
-		<input type="checkbox" id="participate" name="participate" value="participate"> Sign up as a participant</label><br/>
+		<label for="class_description">Class Description: </label>
+		<textarea id="class_description" name="class_description"></textarea><br />
 		</div>
 		<div class="field">
 		<label for="country">Country: </label>
@@ -295,11 +291,6 @@
 		<label for="resume">Resume: </label>
 		<textarea id="resume"></textarea>
 					</div>
-		<div class="field captcha clearfix">
-			<div class="captchawrap"><img src="/captcha.php" alt="captcha" /><div class="hover"></div></div><br />
-			<label for="captcha">Text from the image: </label><br />
-			<input type="text" name="captcha" id="captcha" /><br />
-		</div>
 		<div class="out err"></div>
 		<div class="out suc">Sign up is successful</div>
 		<div class="submitbtn"><a href="#">Submit</a></div>
