@@ -1,6 +1,6 @@
 ![Informal logo](logo-small.png)
 
-# informal - Quick PHP forms
+# [informal - Quick PHP forms](https://www.youtube.com/watch?v=qZTiEQhLvHE)
 
 The title says it all. If you have a need to create PHP forms quickly with file or image uploads, this is a tool for you.
 
