@@ -1,4 +1,6 @@
 <?php
+	error_reporting(E_ERROR | E_PARSE);
+
 	session_start();
 
   	include 'fields.php';
@@ -38,15 +40,18 @@
 		$len = count($image_fields);
 		for ($i = 0; $i < $len; $i++) {
 			if(isset($post[$image_fields[$i]->name]) && trim($post[$image_fields[$i]->name]) !== "") {
-				rename(dirname( __FILE__ ) . $ds."uploads". $ds. $post[$image_fields[$i]->name], dirname( __FILE__ ). $ds."images". $ds.$post[$image_fields[$i]->name]);
+				try {
+			        rename(dirname( __FILE__ ) . $ds."uploads". $ds. $post[$image_fields[$i]->name], dirname( __FILE__ ). $ds."images". $ds.$post[$image_fields[$i]->name]);
+			    } catch (Exception $e) {
+			        echo '{"error":"'.$e->getMessage().'"}';
+			        exit();
+			    }
+
 			}
 		}
 	}
 
-	//TODO: there is no email, except the paypal emai....
-	//TODO: there is no name field for the educator as well
-	//TODO: there is no limitation to the number of images
-
+	// VALIDATION
 	$len = count($required);
 	$require_errors = array();
 	for ($i = 0; $i < $len; $i++) {
@@ -61,13 +66,15 @@
 		exit();
 	}
 
+	// DB Connect
 	try {
-
-		$db_username = 'homestead';
-		$db_password = 'secret';
+		$db_username = 'root';
+		$db_password = 'root';
+		$db_host = 'localhost';
+		$db_port = 8889;
 
 		$db = new PDO(
-		   'mysql:host=localhost;dbname=informal;charset=utf8',
+		   'mysql:host='.$db_host.';port='.$db_port.';dbname=informal;charset=utf8',
 		   $db_username,
 		   $db_password
 		);
@@ -85,6 +92,7 @@
 	// STATEMENT EMULATION OFF
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
+	//AUTO DB Table creation
 	try {
 		$tablesql = createTableSQL($table_name, $data_structure);
 		$db->exec( $tablesql );
@@ -117,39 +125,47 @@
 		return array('sql' => $sql, 'values' => $vals);
 	}
 
-		$s = buildInsertSQL($table_name, $_POST, $data_structure);
 
-		$stmt = $db->prepare( $s['sql'] );
-		$stmt->execute( $s['values'] );
-		if( !$stmt->rowCount() ) {
-			echo '{"error":"Error writting to the database, please try again"}';
-			exit();
-		}
+	// Build and execute insert SQL
+	$s = buildInsertSQL($table_name, $_POST, $data_structure);
 
-		function buildMessage($post, $data_structure) {
-			$msg = "";
+	$stmt = $db->prepare( $s['sql'] );
+	$stmt->execute( $s['values'] );
+	if( !$stmt->rowCount() ) {
+		echo '{"error":"Error writting to the database, please try again"}';
+		exit();
+	}
 
-			$len = count($data_structure);
-			for ($i = 0; $i < $len; $i++) {
-				if(isset($_POST[$data_structure[$i]->name]) && trim($_POST[$data_structure[$i]->name]) !== "") {
+	function buildMessage($data_structure, $host) {
+		$msg = "";
+
+		$len = count($data_structure);
+		for ($i = 0; $i < $len; $i++) {
+			if(isset($_POST[$data_structure[$i]->name]) && trim($_POST[$data_structure[$i]->name]) !== "") {
+				if ($data_structure[$i]->type === 'image') {
+					$msg .= $data_structure[$i]->label . ": ". $host .$_POST[$data_structure[$i]->name]. "\n";
+				} else {
 					$msg .= $data_structure[$i]->label . ": " .$_POST[$data_structure[$i]->name]. "\n";
 				}
 			}
-
-			return $msg;
 		}
 
-		$msg = buildMessage($_POST, $data_structure);
+		return $msg;
+	}
+
+	function sendMail($to, $subject, $host) {
+		$msg = buildMessage($data_structure, $host);
 
 		$headers = "MIME-Version: 1.0\r\n";
 		$headers .= "Date: " . date('r', $_SERVER['REQUEST_TIME']) . "\r\n";
-		$headers .= "From: SIPE 2015 <no-reply@example.com>\r\n";
-		$headers .= "Reply-To: SIPE 2015 <no-reply@example.com>\r\n";
-		$headers .=	"Return-Path: SIPE 2015 <no-reply@example.com>\r\n";
+		$headers .= "From: Informal <no-reply@informal.com>\r\n";
+		$headers .=	"Return-Path: Informal <office@informal.com>\r\n";
 		$headers .= "X-Mailer: PHP/".phpversion()."\r\n";
 		$headers .= "X-Originating-IP: " . $_SERVER['SERVER_ADDR'];
 		// send email
-		//mail("stamatmail@gmail.com","Example Form: ".$_POST['class_name'], $msg, $headers);
+		mail($to, $subject, $msg, $headers);
+	}
 
-		echo '{"success": true}';
-?>
+	//sendMail("some@email.com", "Informal: "+ $_POST['field'])
+
+	echo '{"success": true}';

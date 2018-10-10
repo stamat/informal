@@ -9,6 +9,7 @@
 		public $datatype = 'varchar'; //sql datatype
 		public $length; //contraint of length
 		public $required;
+		public $hidden;
 		public $sql;
 
 		public function buildSQL() {
@@ -21,7 +22,7 @@
 			return $sql;
 		}
 
-		public function __construct($name, $label, $required = false, $type = 'text', $default = null, $placeholder = '', $length = 512, $options = null, $datatype = 'varchar') {
+		public function __construct($name, $label, $required = false, $type = 'text', $hidden = false, $default = null, $placeholder = '', $length = 512, $options = null, $datatype = 'varchar') {
 		    $this->name = $name;
 			$this->label = $label;
 			$this->required = $required;
@@ -31,6 +32,7 @@
 			$this->option = $options;
 			$this->datatype = $datatype;
 			$this->length = $length;
+			$this->hidden = $hidden;
 			$this->sql = $this->buildSQL();
 
 		}
