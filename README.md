@@ -1,4 +1,4 @@
-![Informal logo](logo.png)
+![Informal logo](logo-small.png)
 
 # informal - Quick PHP forms
 
